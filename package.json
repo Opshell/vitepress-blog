@@ -1,0 +1,17 @@
+{
+  "name": "opshell-blog",
+  "version": "1.0.0",
+  "description": "Opshell's blog",
+  "main": "index.js",
+  "repository": "https://github.com/Opshell/vitepress-blog.git",
+  "author": "Opshell",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.3.1"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
+}
