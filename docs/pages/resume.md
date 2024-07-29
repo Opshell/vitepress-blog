@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import ResumeHeader from '../components/orga/resume-header.vue';
+  import Resume from '../components/template/resume.vue';
 </script>
 
 
 
-<ResumeHeader />
+<Resume />

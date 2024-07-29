@@ -5,9 +5,14 @@ export default defineConfig({
     lang: 'zh-Hant',
     title: "Opshell's Blog",
     description: "A blog to share various thoughts,technologies,front-end develop, and miscellaneous topics to engage more with the world.",
-
+    author: 'Opshell',
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ],
+    // srcDir: './pages',
     themeConfig: { // https://vitepress.dev/reference/default-theme-config
         siteTitle: "Opshell's Blog",
+
         logo: {
             light: '/assets/logo.jpg',
             dark: '/assets/logo-w.jpg',
@@ -86,11 +91,45 @@ export default defineConfig({
         lastUpdated: {
             text: 'Last Updated at',
             formatOptions: {
-              dateStyle: 'full',
+              dateStyle: 'medium',
               timeStyle: 'medium'
             }
         },
 
         externalLinkIcon: true,
-    }
+        search: { // 搜索
+            provider: "local",
+            options: {
+                translations: {
+                    button: {
+                        buttonText: "搜尋文章",
+                        buttonAriaLabel: "搜尋文章",
+                    },
+                    modal: {
+                        noResultsText: "找不到相關內容",
+                        resetButtonTitle: "清除搜尋條件",
+                        footer: {
+                            selectText: "選擇",
+                            navigateText: "切換",
+                        },
+                    },
+                },
+            },
+        },
+        notFound:{ // 404
+            title: 'Page Not Found ~!!',
+            quote: '請檢查網址或目前頁面不開放觀看，使用下方按鈕回到首頁。',
+            linkText: '回到首頁'
+        },
+    },
+    markdown: { // markdown 特殊樣式 擴展
+        container: {
+            tipLabel: '提示',
+            warningLabel: '警告',
+            dangerLabel: '危險',
+            infoLabel: '簡述',
+            detailsLabel: '詳細'
+        }
+    },
+
 })

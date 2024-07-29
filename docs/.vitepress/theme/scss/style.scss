@@ -138,3 +138,10 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+
+
+// scss 函式
+@import 'mixin.scss';
+
+// 專案主題變數定義
+@import 'variable.scss';
