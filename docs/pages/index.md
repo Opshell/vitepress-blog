@@ -10,17 +10,21 @@ hero:
     actions:
         - theme: brand
           text: About Opshell
-          link: /pages/about-ops
+          link: /about-ops
         - theme: alt
           text: Article
-          link: /pages/article-list
+          link: /article-list
 
 features:
-    - title: Feature A
+    - icon: 💡
+      title: Feature A
       details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature B
+    - icon: 📦
+      title: Feature B
       details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature C
+    - icon: 🤖
+      title: Feature C
       details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<!-- 表情：https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json -->

@@ -1,5 +1,8 @@
-<script steup lang="ts">
+<script setup lang="ts">
+    import { data } from "../../.vitepress/theme/posts.data.ts";
+    // import data from "../../.vitepress/theme/test.ts";
 
+    console.log(data);
 </script>
 
 <template>

@@ -9,13 +9,16 @@ export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
+    rewrites: { // 我们在nav設定的連結應該要是重寫後的路徑
+        'pages/(.*)': '(.*)',
+    },
     // srcDir: './pages',
     themeConfig: { // https://vitepress.dev/reference/default-theme-config
         siteTitle: "Opshell's Blog",
 
         logo: {
-            light: '/assets/logo.jpg',
-            dark: '/assets/logo-w.jpg',
+            light: '/logo.jpg',
+            dark: '/logo-w.jpg',
             alt: 'Opshell Logo'
         },
         nav: [
@@ -123,6 +126,12 @@ export default defineConfig({
         },
     },
     markdown: { // markdown 特殊樣式 擴展
+        // 主题选择：https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+        // 主题预览：https://vscodethemes.com/
+        // 添加自定义的主题(加载主题)：https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
+        theme: "one-dark-pro",
+        lineNumbers: true, // 显示代码行数
+
         container: {
             tipLabel: '提示',
             warningLabel: '警告',

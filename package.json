@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "opshell-blog",
   "version": "1.0.0",
   "description": "Opshell's blog",
