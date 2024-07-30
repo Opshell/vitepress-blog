@@ -1,11 +1,15 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
+
+import nav from './theme/configs/nav';
+import sidebar from './theme/configs/sidebar';
+import socialLinks from './theme/configs/socialLinks';
+import search from './theme/configs/search';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     lang: 'zh-Hant',
     title: "Opshell's Blog",
     description: "A blog to share various thoughts,technologies,front-end develop, and miscellaneous topics to engage more with the world.",
-    author: 'Opshell',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
@@ -21,70 +25,13 @@ export default defineConfig({
             dark: '/logo-w.jpg',
             alt: 'Opshell Logo'
         },
-        nav: [
-            { text: 'About Ops', link: '/pages/about-ops' },
-            {
-                text: 'Article',
-                items: [
-                    { text: "Code Sea", link: '/pages/article/code-sea/list' },
-                    { text: "Life's Mumurs", link: '/pages/article/life-mumurs/list' },
-                    { text: "Miscellaneous Attempts", link: '/pages/article/attempts/list' },
-                ]
-            },
-            { text: 'Resume', link: '/pages/resume' }
-        ],
+        nav,
 
-        sidebar: {
-            '/pages/article/code-sea/': [
-                {
-                    text: 'Vue',
-                    items: [
-                        { text: 'Why Vue', link: '/pages/article/code-sea/vue/1-Why-Vue' },
-                        { text: 'Components', link: '/pages/article/code-sea/vue/2-Components' }
-                    ]
-                },
-                {
-                    text: 'TypeScript',
-                    items: [
-                        { text: "Who's TypeScript", link: "/pages/article/code-sea/typescript/1-Who's-TypeScript" },
-                        { text: 'Just Begin', link: '/pages/article/code-sea/typescript/2-Just-Begin' }
-                    ]
-                },
-                {
-                    text: 'CSS',
-                    items: [
-                        { text: 'Meet Css', link: '/pages/article/code-sea/vue/1-why-vue' },
-                        { text: 'Runtime API Examples', link: '/pages/article/code-sea/vue/1-why-vue' }
-                    ]
-                },
-            ],
-            '/pages/article/life-mumurs/': [
-                {
-                    text: 'Life Mumurs',
-                    item: [
-                        { text: 'Life is it', link: '/pages/article-list' },
-                        { text: 'Runtime API Examples', link: '/pages/api-examples' }
-                    ]
-                }
-            ],
-            '/pages/article/attempts/': [
-                {
-                    text: 'Miscellaneous Attempts',
-                    item: [
-                        { text: 'Article List', link: '/pages/article-list' },
-                        { text: 'Runtime API Examples', link: '/pages/api-examples' }
-                    ]
-                }
-            ],
-        },
+        sidebar,
 
         aside: true,
 
-        socialLinks: [
-            { icon: 'slack', link: 'https://github.com/vuejs/vitepress', ariaLabel: 'vitepress docs' },
-            { icon: 'facebook', link: 'https://www.cakeresume.com/me/Opshell', ariaLabel: "opshell's cakeresume" },
-            { icon: 'github', link: 'https://github.com/Opshell', ariaLabel: "opshell's github" },
-        ],
+        socialLinks,
 
         footer: {
             message: 'Released under the MIT License.',
@@ -100,25 +47,7 @@ export default defineConfig({
         },
 
         externalLinkIcon: true,
-        search: { // 搜索
-            provider: "local",
-            options: {
-                translations: {
-                    button: {
-                        buttonText: "搜尋文章",
-                        buttonAriaLabel: "搜尋文章",
-                    },
-                    modal: {
-                        noResultsText: "找不到相關內容",
-                        resetButtonTitle: "清除搜尋條件",
-                        footer: {
-                            selectText: "選擇",
-                            navigateText: "切換",
-                        },
-                    },
-                },
-            },
-        },
+        search,
         notFound:{ // 404
             title: 'Page Not Found ~!!',
             quote: '請檢查網址或目前頁面不開放觀看，使用下方按鈕回到首頁。',

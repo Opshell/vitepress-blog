@@ -1,3 +1,16 @@
+---
+title: Docs with VitePress
+auther: 'Opshell'
+editLink: true
+categories:
+  - vitepress-thirty-days
+tags:
+  - 鐵人賽
+  - vitepress
+---
+
+
+
 <script setup lang="ts">
     import Resume from '../components/template/resume.vue';
 

@@ -45,7 +45,7 @@ export default createContentLoader('pages/article/**/*.md', {
             everyCategoryCount: {},
         };
 
-        console.log(raw);
+        // console.log(raw);
 
         raw.forEach(({ url, frontmatter, excerpt }) => {
             if (frontmatter.publish == undefined || frontmatter.publish) {
