@@ -7,6 +7,7 @@ categories:
 tags:
   - 鐵人賽
   - vitepress
+layout: page
 ---
 
 

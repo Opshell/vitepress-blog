@@ -18,7 +18,7 @@
                 <h2>Front-End Developer</h2>
             </header>
 
-            <hr>
+            <hr class="divider">
 
             <div class="skills-block">
                 <section class="contact-block">
@@ -55,35 +55,37 @@
                 </section>
             </div>
 
-            <hr>
+            <hr class="divider">
 
             <section class="contact-block">
                 <h2>Contact</h2>
 
-                <ul>
-                    <li>
+                <ul class="contact-box">
+                    <li class="contact">
                         <icon></icon>
                         <a href="tel:+886 938643321" target="_blank" rel="noopener noreferrer">+886 938643321</a>
                     </li>
-                    <li>
+                    <li class="contact">
                         <icon></icon>
                         <a href="mailto:phenomx9990@gmail.com" target="_blank" rel="noopener noreferrer">phenomx9990@gmail.com</a>
                     </li>
-                    <li>
+                    <li class="contact">
                         <icon></icon>
                         <a href="https://www.opshell.info" target="_blank" rel="noopener noreferrer">Opshell's Website</a>
                     </li>
-                    <li>
+                    <li class="contact">
                         <icon></icon>
                         <a href="https://github.com/Opshell" target="_blank" rel="noopener noreferrer">Opshell's Github</a>
                     </li>
-                    <li>
+                    <li class="contact">
                         <icon></icon>
                         <a href="https://maps.app.goo.gl/9q1aF5LEaEihmDh37" target="_blank" rel="noopener noreferrer">Tainan, Taiwan</a>
                     </li>
                 </ul>
             </section>
         </div>
+
+        <hr class="divider">
 
         <div class="right-block">
             <section>
@@ -105,7 +107,7 @@
                 </p>
             </section>
 
-            <hr>
+            <hr class="divider">
 
             <section>
                 <h2>Work Experience</h2>
@@ -117,13 +119,27 @@
 </template>
 
 <style lang="scss">
-
-
     .article-block {
         display: flex;
 
         width: 100%;
+        height: 100%;
         max-width: 1520px;
+
+        margin: 0 auto;
+
+        .left-block,
+        .right-block {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            .divider {
+                display: inline-block;
+                width: 100%;
+                height: 1px;
+                background: var(--vp-c-text-1);
+            }
+        }
 
         .left-block {
             flex-shrink: 0;
@@ -131,6 +147,9 @@
         }
         .right-block {
             width: 100%;
+        }
+        > .divider {
+            margin: 0 20px;
         }
 
         h2 {
@@ -150,6 +169,17 @@
             font-weight: 300;
             font-size: 20px;
             line-height: 32px;
+        }
+    }
+
+    .contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
     }
 </style>
