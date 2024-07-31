@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-    import { Router } from 'vue-router';
+    // import { Router } from 'vue-router';
 
     // 用於存放元件的 props
     const props = defineProps({
@@ -16,17 +16,17 @@
 
     });
 
-    let router: Router | null = null;
-    if(props.href !== ''){
-        router = useRouter(); // 操作路由
-    }
+    // let router: Router | null = null;
+    // if(props.href !== ''){
+    //     router = useRouter(); // 操作路由
+    // }
 
     // 跳轉
-    const jump = () => {
-        if (props.href !== '' && router) {
-            router.push(props.href);
-        }
-    };
+    // const jump = () => {
+    //     if (props.href !== '' && router) {
+    //         router.push(props.href);
+    //     }
+    // };
 </script>
 
 <style lang="scss">

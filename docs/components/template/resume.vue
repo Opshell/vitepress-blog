@@ -3,19 +3,23 @@
     // import data from "../../.vitepress/theme/test.ts";
 
     console.log(data);
+
+    import { withBase } from 'vitepress'
 </script>
 
 <template>
     <article class="article-block">
         <div class="left-block">
             <header class="header-block">
-                <img src="" alt="">
-                <h1>
-                    <span>劉 育瑋</span>
-                    <span>Opshell</span>
+                <div class="image-box">
+                    <img :src="withBase('images/resume/portrait.png')" alt="Opshell 大頭貼">
+                </div>
+                <h1 class="name">
+                    <span class="zh">劉 育瑋</span>
+                    <span class="en">Opshell</span>
                 </h1>
 
-                <h2>Front-End Developer</h2>
+                <h2 class="job-title">Front-End Developer</h2>
             </header>
 
             <hr class="divider">
@@ -163,6 +167,45 @@
 
         p {
             /* The word "résumé" co */
+            color: var(--vp-c-text-1);
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+
+    .header-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .image-box {
+            background: #d3bba4;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h1 {
+            color: var(--vp-c-text-1);
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 48px;
+            span {
+                display: block;
+            }
+        }
+
+        h2 {
             color: var(--vp-c-text-1);
             font-family: 'Inter';
             font-style: normal;

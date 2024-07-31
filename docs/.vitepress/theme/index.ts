@@ -5,6 +5,8 @@ import DefaultTheme from 'vitepress/theme'
 
 import './scss/style.scss'
 
+import 'virtual:svg-icons-register';
+
 export default {
     extends: DefaultTheme,
     Layout: () => {

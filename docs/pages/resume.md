@@ -10,10 +10,8 @@ tags:
 layout: page
 ---
 
-
-
 <script setup lang="ts">
-    import Resume from '../components/template/resume.vue';
+    import Resume from '@components/template/resume.vue';
 
 </script>
 
