@@ -1,5 +1,5 @@
 <template>
-    <div class="icon" :class="{btn: href !== ''}" @click="jump">
+    <div class="icon" :class="{btn: href !== ''}">
         <svg class="svg">
             <use :xlink:href="`#${name}`" />
         </svg>
