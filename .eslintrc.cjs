@@ -1,4 +1,5 @@
 module.exports = {
+    root: true, // eslint自動生成沒有，需自行加上, 用来告诉eslint找当前配置文件不能往父级查找
     env: {
         browser: true,
         es2021: true,
@@ -10,7 +11,8 @@ module.exports = {
         'plugin:vue/vue3-essential',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
-        'prettier'
+        'prettier',
+        '@vue/prettier'
     ],
     overrides: [
         {
@@ -29,7 +31,7 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'vue'],
+    plugins: ['@typescript-eslint', 'vue', 'prettier'],
     rules: {
         '@typescript-eslint/ban-types': [
             'error',
@@ -42,5 +44,7 @@ module.exports = {
             },
         ],
         // "@typescript-eslint/no-explicit-any": ["off"], // 關閉警告(warning)：不允許使用 any
+        // 'vue/multi-word-component-names': 'off',
+        'prettier/prettier': ['error']
     },
 };

@@ -1,5 +1,5 @@
 <template>
-    <div class="icon" :class="{btn: href !== ''}">
+    <div class="icon" :class="{ btn: href !== '' }">
         <svg class="svg">
             <use :xlink:href="`#${name}`" />
         </svg>
@@ -10,7 +10,7 @@
     // import { Router } from 'vue-router';
 
     // 用於存放元件的 props
-    const props = defineProps({
+    defineProps({
         name: { type: String, required: true, default: 'circle' },
         href: { type: String, default: '' },
     });
@@ -62,7 +62,7 @@
             // fill: #b4bdce;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 background: var(--color-primary-light);
                 border: 1px solid var(--color-primary-light);
                 fill: var(--color-extreme-reverse);

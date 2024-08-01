@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    import { data } from "../../.vitepress/theme/posts.data.ts";
+    import { data } from '../../.vitepress/theme/posts.data.ts';
     // import data from "../../.vitepress/theme/test.ts";
 
     console.log(data);
 
-    import { withBase } from 'vitepress'
+    import { withBase } from 'vitepress';
 </script>
 
 <template>
@@ -12,7 +12,7 @@
         <div class="left-block">
             <header class="header-block">
                 <div class="image-box">
-                    <img :src="withBase('images/resume/portrait.png')" alt="Opshell 大頭貼">
+                    <img :src="withBase('images/resume/portrait.png')" alt="Opshell 大頭貼" />
                 </div>
                 <h1 class="name">
                     <span class="zh">劉 育瑋</span>
@@ -22,7 +22,7 @@
                 <h2 class="job-title">Front-End Developer</h2>
             </header>
 
-            <hr class="divider">
+            <hr class="divider" />
 
             <div class="skills-block">
                 <section class="contact-block">
@@ -59,7 +59,7 @@
                 </section>
             </div>
 
-            <hr class="divider">
+            <hr class="divider" />
 
             <section class="contact-block">
                 <h2>Contact</h2>
@@ -89,34 +89,19 @@
             </section>
         </div>
 
-        <hr class="divider">
+        <hr class="divider" />
 
         <div class="right-block">
             <section>
                 <h2>About Opshell</h2>
 
-                <p>
-                    喜歡交流、學習技術的我，
-                    從高中開始對程式語言萌生興趣，獨立製作了一個RPG畢業專題，
-                    在大學、實習時期確認了喜愛的程式類型，並完成網頁技術相關的國科會計畫。
-
-                    在之後的工作中，一頭熱的投入了全端網頁技術的海洋，
-                    熟練HTML、CSS、Javascript、Typescript、Vue等前端語言、框架，
-                    使用PHP、SQL撰寫網站後端，串接各式API，用GCP配合LAMP架站。
-
-                    對設計美感與使用體驗有要求的我，
-                    持續的學習與成長，面對新的挑戰，一步步超越自己。
-                    不喜歡停滯不前，在時代與技術的洪流中，
-                    只有被沖走或逆流而上兩個選項。
-                </p>
+                <p>喜歡交流、學習技術的我， 從高中開始對程式語言萌生興趣，獨立製作了一個RPG畢業專題， 在大學、實習時期確認了喜愛的程式類型，並完成網頁技術相關的國科會計畫。 在之後的工作中，一頭熱的投入了全端網頁技術的海洋， 熟練HTML、CSS、Javascript、Typescript、Vue等前端語言、框架， 使用PHP、SQL撰寫網站後端，串接各式API，用GCP配合LAMP架站。 對設計美感與使用體驗有要求的我， 持續的學習與成長，面對新的挑戰，一步步超越自己。 不喜歡停滯不前，在時代與技術的洪流中， 只有被沖走或逆流而上兩個選項。</p>
             </section>
 
-            <hr class="divider">
+            <hr class="divider" />
 
             <section>
                 <h2>Work Experience</h2>
-
-
             </section>
         </div>
     </article>

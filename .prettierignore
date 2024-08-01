@@ -1,4 +1,9 @@
-node_modules
-dist
-public
-// .eslintrc.cjs
+.vscode/
+.github/
+node_modules/
+resource/
+package.json
+
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/types/

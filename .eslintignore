@@ -1,9 +1,9 @@
 .vscode/
+.github/
 node_modules/
-public/
-es/
-lib/
-dist/
-docs/
-src/assets/
+resource/
 package.json
+
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/types/
