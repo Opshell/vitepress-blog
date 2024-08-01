@@ -7,20 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AtomBtn: typeof import('./../components/atom/btn.vue')['default']
-    AtomBtnToggle: typeof import('./../components/atom/btnToggle.vue')['default']
-    AtomCheckbox: typeof import('./../components/atom/checkbox.vue')['default']
-    AtomDivider: typeof import('./../components/atom/divider.vue')['default']
-    AtomImg: typeof import('./../components/atom/img.vue')['default']
-    AtomInput: typeof import('./../components/atom/input.vue')['default']
-    AtomInputBox: typeof import('./../components/atom/inputBox.vue')['default']
-    AtomRadio: typeof import('./../components/atom/radio.vue')['default']
-    AtomSelect: typeof import('./../components/atom/select.vue')['default']
-    AtomSvgIcon: typeof import('./../components/atom/svgIcon.vue')['default']
-    Btn: typeof import('./../components/atom/btn.vue')['default']
-    BtnToggle: typeof import('./../components/atom/btnToggle.vue')['default']
-    Checkbox: typeof import('./../components/atom/checkbox.vue')['default']
-    Divider: typeof import('./../components/atom/divider.vue')['default']
     ElBtn: typeof import('./../components/el/btn.vue')['default']
     ElBtnToggle: typeof import('./../components/el/btnToggle.vue')['default']
     ElCheckbox: typeof import('./../components/el/checkbox.vue')['default']
@@ -31,17 +17,8 @@ declare module 'vue' {
     ElRadio: typeof import('./../components/el/radio.vue')['default']
     ElSelect: typeof import('./../components/el/select.vue')['default']
     ElSvgIcon: typeof import('./../components/el/svgIcon.vue')['default']
-    Experience: typeof import('./../components/mole/experience.vue')['default']
-    Img: typeof import('./../components/atom/img.vue')['default']
-    Input: typeof import('./../components/atom/input.vue')['default']
-    InputBox: typeof import('./../components/atom/inputBox.vue')['default']
     MoleExperience: typeof import('./../components/mole/experience.vue')['default']
     OrgaResumeHeader: typeof import('./../components/orga/resume-header.vue')['default']
-    Radio: typeof import('./../components/atom/radio.vue')['default']
-    Resume: typeof import('./../components/template/resume.vue')['default']
-    ResumeHeader: typeof import('./../components/orga/resume-header.vue')['default']
-    Select: typeof import('./../components/atom/select.vue')['default']
-    SvgIcon: typeof import('./../components/atom/svgIcon.vue')['default']
     TemplateResume: typeof import('./../components/template/resume.vue')['default']
   }
 }

@@ -184,6 +184,7 @@
             background: #d3bba4;
             width: 250px;
             height: 250px;
+            @include setSize(250px, 250px);
             border-radius: 50%;
             overflow: hidden;
             img {

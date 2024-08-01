@@ -79,7 +79,7 @@ export default defineConfig({
         resolve: {
             alias: { // 設定別名
                 '@': path.resolve(__dirname, '../'), // docs 當根目錄
-                '@vitepress': path.resolve(__dirname, 'vitepress'),
+                '@vitepress': path.resolve(__dirname), // .vitepress 目錄
                 '@components': path.resolve(__dirname, '../', 'components'),
                 '@pages': path.resolve(__dirname, '../', 'pages'),
             }
@@ -131,6 +131,16 @@ export default defineConfig({
                 inject: 'body-last', // | 'body-first' sprite插入位置
                 customDomId: '__svg__icons__dom__', // 自訂 Dom ID
             }),
-        ]
+        ],
+        // 共用全域 SCSS
+        css: {
+            devSourcemap: true, // scss sourcemap
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@import "@vitepress/theme/scss/style.scss";`,
+                    charset: false,
+                },
+            },
+        },
     }
 });
