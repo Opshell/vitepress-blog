@@ -12,6 +12,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    base: '/vitepress-blog/',
     lang: 'zh-Hant',
     title: "Opshell's Blog",
     description: "A blog to share various thoughts,technologies,front-end develop, and miscellaneous topics to engage more with the world.",
