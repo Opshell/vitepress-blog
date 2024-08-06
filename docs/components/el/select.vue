@@ -1,33 +1,36 @@
 <script setup lang="ts">
-    import { VueStyleProp } from 'quasar';
+    import type { VueStyleProp } from 'quasar';
     import { useGlobalProperties } from '@/hooks/utilityFunctions';
+
+    const props = withDefaults(
+        defineProps<{
+            options: iOptions[]
+            type?: 'select' | 'feature'
+            defaultText?: string
+            defaultInactive?: boolean
+            isPrependCircle?: boolean
+        }>(),
+        {
+            options: () => [],
+            type: 'select',
+            defaultText: '請選擇',
+            defaultInactive: false,
+            isPrependCircle: false
+        }
+    );
 
     const porxy = useGlobalProperties();
 
     interface iOptions {
-        title: number | string;
-        value: number;
+        title: number | string
+        value: number
     }
-
-    const props = withDefaults(defineProps<{
-        options: iOptions[],
-        type?: 'select' | 'feature',
-        defaultText?: string,
-        defaultInactive?: boolean,
-        isPrependCircle?: boolean
-    }>(), {
-        options: () => [],
-        type: 'select',
-        defaultText: '請選擇',
-        defaultInactive: false,
-        isPrependCircle: false
-    });
 
     const finalOptions = computed(() => {
         const options = porxy._.cloneDeep(props.options);
 
-        //預設值 value = 0
-        if (porxy._.findIndex(options, (option:iOptions) => option.value === 0) === -1){
+        // 預設值 value = 0
+        if (porxy._.findIndex(options, (option: iOptions) => option.value === 0) === -1) {
             options.unshift({ title: props.defaultText, value: 0, inactive: props.defaultInactive });
         }
 
@@ -43,33 +46,7 @@
 </script>
 
 <template>
-    <q-select
-        class="el-select"
-        :class="{ feature: type == 'feature', isOpen: isMenuShow}"
-        v-model="data"
-        :options="finalOptions"
-
-        option-label="title"
-        option-value="value"
-        option-disable="inactive"
-        :hide-dropdown-icon="true"
-
-        fill-input
-        emit-value
-        map-options
-
-        transition-show="jump-down"
-        transition-hide="jump-down"
-        popup-content-class="el-select-list"
-        :popup-content-style="attrStyle"
-
-        :menu-offset="[0, 10]"
-
-        v-bind="$attrs"
-
-        @popup-show="() => isMenuShow = true"
-        @popup-hide="() => isMenuShow = false"
-    >
+    <q-select v-model="data" class="el-select" :class="{ feature: type === 'feature', isOpen: isMenuShow }" :options="finalOptions" option-label="title" option-value="value" option-disable="inactive" :hide-dropdown-icon="true" fill-input emit-value map-options transition-show="jump-down" transition-hide="jump-down" popup-content-class="el-select-list" :popup-content-style="attrStyle" :menu-offset="[0, 10]" v-bind="$attrs" @popup-show="() => (isMenuShow = true)" @popup-hide="() => (isMenuShow = false)">
         <template v-if="$slots.selected" #selected>
             <slot name="selected" />
         </template>
@@ -81,9 +58,9 @@
         </template>
         <template v-if="$slots.prepend || isPrependCircle" #prepend>
             <slot v-if="$slots.prepend" name="prepend" />
-            <span v-else class="circle"></span>
+            <span v-else class="circle" />
         </template>
-        <template v-if="type != 'feature'" #append>
+        <template v-if="type !== 'feature'" #append>
             <ElSvgIcon name="arrow_drop_down" />
         </template>
     </q-select>
@@ -111,32 +88,40 @@
                 color: var(--color-title);
             }
 
-            &__control { // 主外殼
+            &__control {
+                // 主外殼
                 background: var(--color-extreme-reverse);
                 border: 1px solid var(--color-border-box);
                 border-radius: 5px;
 
                 font-size: var(--font-size-remark);
                 overflow: hidden;
-                transition: .2s $cubic-FiSo;
+                transition: 0.2s $cubic-FiSo;
 
-                &::before { display: none; }
-                &-container { @include setFlex(space-between); }
+                &::before {
+                    display: none;
+                }
+                &-container {
+                    @include setFlex(space-between);
+                }
             }
 
-            &__native { // 結果框
+            &__native {
+                // 結果框
                 padding: 10px;
                 line-height: 1;
             }
 
-            &__append {// 下拉圖標區塊
+            &__append {
+                // 下拉圖標區塊
                 padding-right: 3px;
             }
 
-            &__prepend{ //前方icon
+            &__prepend {
+                //前方icon
                 padding: 0;
-                .circle{
-                    content: "";
+                .circle {
+                    content: '';
                     width: 10px;
                     height: 10px;
                     border-radius: 100%;
@@ -161,9 +146,15 @@
                 color: var(--color-primary);
             }
 
-            .icon { fill: var(--color-primary); }
-            .q-icon { color: var(--color-primary); }
-            .q-field__control{ border-color: var(--color-hover-light); }
+            .icon {
+                fill: var(--color-primary);
+            }
+            .q-icon {
+                color: var(--color-primary);
+            }
+            .q-field__control {
+                border-color: var(--color-hover-light);
+            }
         }
 
         // [M] 狀態
@@ -184,10 +175,14 @@
                     color: var(--color-primary);
                 }
 
-                .icon { fill: var(--color-primary); }
-                .q-icon { color: var(--color-primary); }
+                .icon {
+                    fill: var(--color-primary);
+                }
+                .q-icon {
+                    color: var(--color-primary);
+                }
 
-                .q-field__control{
+                .q-field__control {
                     border-color: var(--color-primary);
                     box-shadow: 0 0 0 2px var(--color-hover-light);
                     color: var(--color-primary);
@@ -203,7 +198,9 @@
             }
 
             &.isOpen {
-                .icon { transform: rotateZ(180deg); }
+                .icon {
+                    transform: rotateZ(180deg);
+                }
             }
         }
     }

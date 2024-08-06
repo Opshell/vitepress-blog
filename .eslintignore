@@ -1,9 +1,0 @@
-.vscode/
-.github/
-node_modules/
-resource/
-package.json
-
-docs/.vitepress/cache/
-docs/.vitepress/dist/
-docs/types/
