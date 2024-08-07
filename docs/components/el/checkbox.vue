@@ -4,26 +4,16 @@
 
 <template>
     <q-checkbox
-        class="el-checkbox"
         v-model="data"
+        class="el-checkbox"
 
         v-bind="$attrs"
-    >
-    </q-checkbox>
+    />
 </template>
 
 <style lang="scss">
     .el-checkbox {
         .q-checkbox {
-            &__inner {
-                &--truthy,
-                &--indet {
-                    .q-checkbox__bg {
-                        background: var(--color-primary);
-                        border-color: var(--color-primary);
-                    }
-                }
-            }
             &__bg {
                 background: var(--color-extreme-reverse);
                 border: 1px solid var(--color-border-box);
@@ -33,14 +23,24 @@
                 }
             }
             &__label {
-                font-weight: 400;
                 color: var(--color-extreme);
+                font-weight: 400;
                 transform: translateX(-5px);
+            }
+
+            &__inner {
+                &--truthy,
+                &--indet {
+                    .q-checkbox__bg {
+                        background: var(--color-primary);
+                        border-color: var(--color-primary);
+                    }
+                }
             }
         }
     }
 
-    body.desktop .el-checkbox:not(.disabled) .q-checkbox__inner:before {
+    body.desktop .el-checkbox:not(.disabled) .q-checkbox__inner::before {
         background: var(--color-primary-light);
     }
 </style>

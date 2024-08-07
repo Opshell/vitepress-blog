@@ -1,4 +1,4 @@
-//@extend class
+// @extend class
 * {
     padding: 0;
     box-sizing: border-box;
@@ -6,55 +6,53 @@
 }
 
 // 最底三層
-html{
+html {
     // 下面兩項參數是為了 在全版頁面的設計下
     // 手機瀏覽器可以正確排除工具列的高度p
     // 後來出現了統一標準 dvh 只剩firefix 不支援
     position: fixed;
-    @include setSize(100%, 100%);
-    overflow: -moz-scrollbars-vertical;
-
     font-size: 16px;
+    overflow: -moz-scrollbars-vertical;
+    @include setSize(100%, 100%);
     @include setRWD(1200px) {
         font-size: 14px;
     }
-
     @include setRWD(600px) {
         font-size: 12px;
     }
 }
-body{
+body {
     background: var(--color-view-block);
     width: 100%;
     @extend %baseFont;
     visibility: visible;
-
     &.fixed{ overflow: hidden; }
 }
 
 // 表單相關
-form{
+form {
     font-size: 1rem;
     }
-    label{
+    label {
         display: inline-flex;
         align-items: center;
         cursor: pointer;
     }
     input {
         // [#]自動填入  input底色修正
-        background-clip: text !important;
         -webkit-background-clip: text !important;
+        background-clip: text !important;
 
         // [-]Edge 的眼睛icon
-        &[type='password'] {
+        &[type=password] {
             ::-ms-reveal { display: none; }
         }
 
         // [-] hide number input arrow
-        /* Firefox */
+        // Firefox
         &[type=number] { -moz-appearance: textfield; }
-        /* Chrome, Safari, Edge, Opera */
+
+        // Chrome, Safari, Edge, Opera
         &[type=number]::-webkit-inner-spin-button,
         &[type=number]::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -62,26 +60,27 @@ form{
         }
     }
 
-    select{
-        // @extend input[type='radio'];
-        /*移除箭頭樣式*/
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        /*IE隱藏箭頭樣式*/
-        &::-ms-expand { display: none;}
-
-        /*改變右邊箭頭樣式*/
-        // background: #fff url("../images/selectArrow.png")no-repeat calc(100% - 15px) center;
-
-        @include setSize(100%, 34px);
+    select {
         padding: 2px;
         padding-right:40px;
-        border: 0px;
-        margin: 0;
+        border: 0;
         outline: none;
-        font-size: 1rem;
+        margin: 0;
         color: #333;
+        font-size: 1rem;
+
+        // @extend input[type='radio'];
+        // 移除箭頭樣式
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        // IE隱藏箭頭樣式
+        &::-ms-expand { display: none;}
+
+        // 改變右邊箭頭樣式
+        // background: #fff url("../images/selectArrow.png")no-repeat calc(100% - 15px) center;
+        @include setSize(100%, 34px);
 
         /* 卷軸設定 */
         &::-webkit-scrollbar {
@@ -94,9 +93,9 @@ form{
             background: var(--color-primary)
         }
     }
-    textarea{
+    textarea {
         padding: 5px;
-        border: 1px solid rgba(216, 216, 216, .8);
+        border: 1px solid rgb(216 216 216 / 80%);
         box-sizing: border-box;
         resize: none;
         font-size: 1rem;
@@ -108,15 +107,21 @@ img {
 }
 
 a {
-    cursor: pointer;
     color: inherit;
     font-size: inherit;
     text-decoration: none;
+    cursor: pointer;
     @extend %baseFont;
 }
 
-//other
-.red{ color: var(--color-error); fill: var(--color-error); }
-.space{ display: inline-block; width: 7px; }
-.ellipsis{ overflow: hidden; text-overflow: ellipsis; white-space:nowrap; }
-.hidden{ display: none; }
+// other
+.red {
+    color: var(--color-error);
+    fill: var(--color-error);
+}
+.ellipsis {
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.hidden { display: none; }

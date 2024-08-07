@@ -1,30 +1,30 @@
 <script setup lang="ts">
-    import { RouteLocationRaw } from 'vue-router';
+    import type { RouteLocationRaw } from 'vue-router';
 
     interface iProps {
-        title?: string;
-        icon?: string;
-        href?: RouteLocationRaw;
+        title?: string
+        icon?: string
+        href?: RouteLocationRaw
     }
     withDefaults(defineProps<iProps>(), {
         title: '',
         icon: '',
-        href: '',
+        href: ''
     });
 </script>
 
 <template>
-    <router-link v-if="href != ''" :to="href" class="el-btn" role="button">
-        <slot v-if="$slots.icon" name="icon"></slot>
+    <router-link v-if="href !== ''" :to="href" class="el-btn" role="button">
+        <slot v-if="$slots.icon" name="icon" />
         <span v-if="$slots.default" class="text">
-            <slot></slot>
+            <slot />
         </span>
     </router-link>
 
     <div v-else class="el-btn" role="button">
-        <slot v-if="$slots.icon" name="icon"></slot>
+        <slot v-if="$slots.icon" name="icon" />
         <span v-if="$slots.default" class="text">
-            <slot></slot>
+            <slot />
         </span>
     </div>
 </template>
@@ -32,9 +32,8 @@
 <style lang="scss">
     .el-btn {
         --color-btn-background: #F5F5F5;
-
         position: relative;
-        @include setFlex();
+        @include setFlex;
         gap: 3px;
         background: var(--color-btn-background);
         @include setSize(auto, 40px);
@@ -46,10 +45,10 @@
         transition: 0.2s $cubic-FiSo;
         overflow: hidden;
         .text {
-            white-space: nowrap;
             font-size: 1rem;
-            user-select: none;
+            white-space: nowrap;
             transform: translateY(1px);
+            user-select: none;
         }
         .icon {
             flex-shrink: 0;
@@ -82,25 +81,13 @@
             color: var(--color-extreme-reverse);
             .icon { fill: var(--color-extreme-reverse);}
         }
-        &.disable {
-            background: var(--color-view-block);
-            border-color: var(--color-border-box);
-            color: var(--color-text-light);
-            .icon { fill: var(--color-text-light);}
-            cursor: not-allowed;
-            &:hover {
-                background: var(--color-view-block);
-                border-color: var(--color-border-box);
-                color: var(--color-text-light);
-                .icon { fill: var(--color-text-light);}
-            }
-        }
         &.white {
             background: var(--color-extreme-reverse);
             border-color: var(--color-extreme-reverse);
             color: var(--color-extreme);
             .icon { fill: var(--color-extreme);}
         }
+
         &.border{
             border: 1px solid var(--color-primary);
             box-shadow: 0 0 0 2px var(--color-hover-light);
@@ -120,7 +107,6 @@
             border-color: var(--color-primary-dark);
             color: var(--color-extreme-reverse);
             .icon { fill: var(--color-extreme-reverse);}
-
             transition-duration: .03s;
         }
         &.current { // 當前頁面
@@ -128,6 +114,19 @@
             border-color: var(--color-primary-dark);
             color: var(--color-primary-dark);
             .icon { fill: var(--color-primary-dark);}
+        }
+        &.disable {
+            background: var(--color-view-block);
+            border-color: var(--color-border-box);
+            color: var(--color-text-light);
+            .icon { fill: var(--color-text-light);}
+            cursor: not-allowed;
+            &:hover {
+                background: var(--color-view-block);
+                border-color: var(--color-border-box);
+                color: var(--color-text-light);
+                .icon { fill: var(--color-text-light);}
+            }
         }
         &.small-text .text{
             font-size: 0.875rem;
