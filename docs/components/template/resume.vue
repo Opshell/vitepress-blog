@@ -1,10 +1,8 @@
 <script setup lang="ts">
-    import { data } from '../../.vitepress/theme/posts.data.ts';
-    // import data from "../../.vitepress/theme/test.ts";
-
-    console.log(data);
+    import skillsData from '@data/skills';
 
     import { withBase } from 'vitepress';
+    import { data } from '../../.vitepress/theme/posts.data';
 </script>
 
 <template>
@@ -19,18 +17,38 @@
                     <span class="en">Opshell</span>
                 </h1>
 
-                <h2 class="job-title">Front-End Developer</h2>
+                <h2 class="job-title">
+                    Front-End Developer
+                </h2>
             </header>
 
             <hr class="divider" />
 
             <div class="skills-block">
+                <OrgaSkillBlock
+                    v-for="skills in skillsData"
+                    :key="skills.title"
+                    :title="skills.title"
+                >
+                    <MoleSkillBox>
+                        <ElSkill
+                            v-for="skill in skills.items"
+                            :key="skill.name"
+                            :style="{ '--color-skill': skill.color }"
+                        >
+                            <template #icon>
+                                <div class="icon" v-html="skill.icon" />
+                            </template>
+                            <span class="text">{{ skill.name }}</span>
+                        </ElSkill>
+                    </MoleSkillBox>
+                </OrgaSkillBlock>
                 <section class="contact-block">
                     <h2>Front-End Skills</h2>
 
                     <ul>
                         <li>
-                            <icon></icon>
+                            <icon />
                             <span>Vue</span>
                         </li>
                     </ul>
@@ -41,7 +59,7 @@
 
                     <ul>
                         <li>
-                            <icon></icon>
+                            <icon />
                             <span>php</span>
                         </li>
                     </ul>
@@ -52,7 +70,7 @@
 
                     <ul>
                         <li>
-                            <icon></icon>
+                            <icon />
                             <span>Figma</span>
                         </li>
                     </ul>
@@ -66,23 +84,23 @@
 
                 <ul class="contact-box">
                     <li class="contact">
-                        <icon></icon>
+                        <icon />
                         <a href="tel:+886 938643321" target="_blank" rel="noopener noreferrer">+886 938643321</a>
                     </li>
                     <li class="contact">
-                        <icon></icon>
+                        <icon />
                         <a href="mailto:phenomx9990@gmail.com" target="_blank" rel="noopener noreferrer">phenomx9990@gmail.com</a>
                     </li>
                     <li class="contact">
-                        <icon></icon>
+                        <icon />
                         <a href="https://www.opshell.info" target="_blank" rel="noopener noreferrer">Opshell's Website</a>
                     </li>
                     <li class="contact">
-                        <icon></icon>
+                        <icon />
                         <a href="https://github.com/Opshell" target="_blank" rel="noopener noreferrer">Opshell's Github</a>
                     </li>
                     <li class="contact">
-                        <icon></icon>
+                        <icon />
                         <a href="https://maps.app.goo.gl/9q1aF5LEaEihmDh37" target="_blank" rel="noopener noreferrer">Tainan, Taiwan</a>
                     </li>
                 </ul>
@@ -110,11 +128,9 @@
 <style lang="scss">
     .article-block {
         display: flex;
-
         width: 100%;
-        height: 100%;
         max-width: 1520px;
-
+        height: 100%;
         margin: 0 auto;
 
         .left-block,
@@ -124,9 +140,9 @@
             gap: 50px;
             .divider {
                 display: inline-block;
+                background: var(--vp-c-text-1);
                 width: 100%;
                 height: 1px;
-                background: var(--vp-c-text-1);
             }
         }
 
@@ -143,20 +159,20 @@
 
         h2 {
             color: var(--vp-c-text-1);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
+            font-family: Inter;
             font-size: 36px;
+            font-weight: 500;
+            font-style: normal;
             line-height: 48px;
         }
 
         p {
             /* The word "résumé" co */
             color: var(--vp-c-text-1);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 300;
+            font-family: Inter;
             font-size: 20px;
+            font-weight: 300;
+            font-style: normal;
             line-height: 32px;
         }
     }
@@ -181,10 +197,10 @@
 
         h1 {
             color: var(--vp-c-text-1);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
+            font-family: Inter;
             font-size: 36px;
+            font-weight: 500;
+            font-style: normal;
             line-height: 48px;
             span {
                 display: block;
@@ -193,10 +209,10 @@
 
         h2 {
             color: var(--vp-c-text-1);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 300;
+            font-family: Inter;
             font-size: 20px;
+            font-weight: 300;
+            font-style: normal;
             line-height: 32px;
         }
     }

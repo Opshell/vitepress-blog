@@ -8,7 +8,6 @@ import nav from './theme/configs/nav';
 import sidebar from './theme/configs/sidebar';
 import socialLinks from './theme/configs/socialLinks';
 import search from './theme/configs/search';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -134,10 +133,10 @@ export default defineConfig({
 
                 inject: 'body-last', // | 'body-first' sprite插入位置
                 customDomId: '__svg__icons__dom__' // 自訂 Dom ID
-            }),
-            tsconfigPaths({
-                root: path.resolve(__dirname, '../', '../')
             })
+            // tsconfigPaths({
+            //     root: path.resolve(__dirname, '../', '../')
+            // })
         ],
         // 共用全域 SCSS
         css: {

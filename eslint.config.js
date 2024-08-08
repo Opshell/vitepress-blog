@@ -32,7 +32,6 @@ export default antfu(
         rules: {
             'style/semi': ['error', 'always'], // 結束需要分號
             'style/comma-dangle': ['error', 'never'] // 關閉末尾陣列尾隨逗號
-
         }
     },
     { // 某些規則僅在特定文件中啟用，例如，規則僅在檔中啟用，規則僅在檔中啟用。如果要覆寫規則，則需要指定檔案延伸名稱：ts/*.tsvue/*.vue
@@ -54,7 +53,15 @@ export default antfu(
                     multiline: 'always'
                 }
             }],
-            'vue/html-self-closing': 'never' // 接受 html 自關閉標籤
+            'vue/html-self-closing': ['error', {
+                html: {
+                    void: 'always',
+                    normal: 'always',
+                    component: 'always'
+                },
+                svg: 'always',
+                math: 'always'
+            }]
         }
     }
 );

@@ -16,9 +16,14 @@ declare module 'vue' {
     ElInputBox: typeof import('./../components/el/inputBox.vue')['default']
     ElRadio: typeof import('./../components/el/radio.vue')['default']
     ElSelect: typeof import('./../components/el/select.vue')['default']
+    ElSkill: typeof import('./../components/el/skill.vue')['default']
     ElSvgIcon: typeof import('./../components/el/svgIcon.vue')['default']
+    LayoutArticle: typeof import('./../components/layout/article.vue')['default']
+    LayoutBlog: typeof import('./../components/layout/blog.vue')['default']
     MoleExperience: typeof import('./../components/mole/experience.vue')['default']
+    MoleSkillBox: typeof import('./../components/mole/skillBox.vue')['default']
     OrgaResumeHeader: typeof import('./../components/orga/resume-header.vue')['default']
+    OrgaSkillBlock: typeof import('./../components/orga/skillBlock.vue')['default']
     TemplateResume: typeof import('./../components/template/resume.vue')['default']
   }
 }

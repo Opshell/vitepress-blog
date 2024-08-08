@@ -1,10 +1,8 @@
-
-
-
 // scss 函式
-@import 'mixin.scss';
+@import 'mixin';
 
 // 專案主題變數定義
-@import 'variable.scss';
+@import 'variable';
 
-@import 'theme.scss';
+// vitepress 預設樣式的覆蓋
+@import 'vitepress';

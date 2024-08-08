@@ -18,7 +18,7 @@
         }
     },
     "include": [
-        "docs/**/*.ts", "docs/**/*.vue"
+        "docs/**/*.ts", "docs/**/*.d.ts", "docs/**/*.vue", "docs/types/*.d.ts"
     ],
     "exclude": [
         "node_modules",
