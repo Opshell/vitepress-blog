@@ -2,6 +2,11 @@ import antfu from '@antfu/eslint-config';
 
 export default antfu(
     { // General rules
+        env: {
+            browser: true,
+            es2021: true,
+            node: true
+        },
         // Customize the stylistic rules
         stylistic: {
             indent: 4, // 2, 4, or 'tab'
@@ -18,13 +23,16 @@ export default antfu(
 
         yaml: false,
         jsonc: false,
-        typescript: true,
-        vue: true
+        vue: true,
+        typescript: {
+            tsconfigPath: 'tsconfig.json'
+        }
     },
     { // Without `files`, they are general rules for all files
         rules: {
             'style/semi': ['error', 'always'], // 結束需要分號
             'style/comma-dangle': ['error', 'never'] // 關閉末尾陣列尾隨逗號
+
         }
     },
     { // 某些規則僅在特定文件中啟用，例如，規則僅在檔中啟用，規則僅在檔中啟用。如果要覆寫規則，則需要指定檔案延伸名稱：ts/*.tsvue/*.vue
@@ -45,8 +53,8 @@ export default antfu(
                     singleline: 'never',
                     multiline: 'always'
                 }
-            }]
-
+            }],
+            'vue/html-self-closing': 'never' // 接受 html 自關閉標籤
         }
     }
 );

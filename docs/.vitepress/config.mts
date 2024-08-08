@@ -1,30 +1,30 @@
+import path from 'node:path';
 import { defineConfig } from 'vitepress';
 
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import nav from './theme/configs/nav';
 import sidebar from './theme/configs/sidebar';
 import socialLinks from './theme/configs/socialLinks';
 import search from './theme/configs/search';
-
-import path from 'path';
-import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     base: '/vitepress-blog/',
     lang: 'zh-Hant',
-    title: "Opshell's Blog",
-    description: "A blog to share various thoughts,technologies,front-end develop, and miscellaneous topics to engage more with the world.",
+    title: 'Opshell\'s Blog',
+    description: 'A blog to share various thoughts,technologies,front-end develop, and miscellaneous topics to engage more with the world.',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
     rewrites: { // 我们在nav設定的連結應該要是重寫後的路徑
-        'pages/(.*)': '(.*)',
+        'pages/(.*)': '(.*)'
     },
     // srcDir: './pages',
     themeConfig: { // https://vitepress.dev/reference/default-theme-config
-        siteTitle: "Opshell's Blog",
+        siteTitle: 'Opshell\'s Blog',
 
         logo: {
             light: '/logo.jpg',
@@ -47,24 +47,24 @@ export default defineConfig({
         lastUpdated: {
             text: 'Last Updated at',
             formatOptions: {
-              dateStyle: 'medium',
-              timeStyle: 'medium'
+                dateStyle: 'medium',
+                timeStyle: 'medium'
             }
         },
 
         externalLinkIcon: true,
         search,
-        notFound:{ // 404
+        notFound: { // 404
             title: 'Page Not Found ~!!',
             quote: '請檢查網址或目前頁面不開放觀看，使用下方按鈕回到首頁。',
             linkText: '回到首頁'
-        },
+        }
     },
     markdown: { // markdown 特殊樣式 擴展
         // 主题选择：https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
         // 主题预览：https://vscodethemes.com/
         // 添加自定义的主题(加载主题)：https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
-        theme: "one-dark-pro",
+        theme: 'one-dark-pro',
         lineNumbers: true, // 显示代码行数
 
         container: {
@@ -82,32 +82,35 @@ export default defineConfig({
                 '@': path.resolve(__dirname, '../'), // docs 當根目錄
                 '@vitepress': path.resolve(__dirname), // .vitepress 目錄
                 '@components': path.resolve(__dirname, '../', 'components'),
-                '@pages': path.resolve(__dirname, '../', 'pages'),
+                '@data': path.resolve(__dirname, '../', 'data'),
+                '@hooks': path.resolve(__dirname, '../', 'hooks'),
+                '@pages': path.resolve(__dirname, '../', 'pages')
             }
         },
         plugins: [
             AutoImport({
                 include: [
                     /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-                    /\.vue$/, /\.vue\?vue/, // .vue
-                    /\.md$/, // .md
+                    /\.vue$/,
+                    /\.vue\?vue/, // .vue
+                    /\.md$/ // .md
                 ],
                 // global imports to register
                 imports: [ // presets
                     'vue',
-                    {// custom
+                    { // custom
                         '@vueuse/core': [
                             // named imports
                             'useMouse', // import { useMouse } from '@vueuse/core',
                             // alias
-                            ['useFetch', 'useMyFetch'],
+                            ['useFetch', 'useMyFetch']
                         ],
                         'axios': [
                             // default imports
-                            ['default', 'axios'],
+                            ['default', 'axios']
                         ],
-                        vue: ["PropType", "defineProps", "InjectionKey", "Ref"]
-                    },
+                        'vue': ['PropType', 'defineProps', 'InjectionKey', 'Ref']
+                    }
                 ],
                 dirs: [],
                 dts: './types/auto-imports.d.ts', // typescript 宣告檔案位置
@@ -115,13 +118,13 @@ export default defineConfig({
                 eslintrc: {
                     enabled: false, // Default `false`
                     filepath: './.eslintrc-auto-import.json',
-                    globalsPropValue: true,
-                },
+                    globalsPropValue: true
+                }
             }),
             Components({
-                dirs: [ './components' ], // 指定components位置 預設是'src/components'
+                dirs: ['./components'], // 指定components位置 預設是'src/components'
                 dts: './types/components.d.ts', // .d.ts生成位置
-                extensions: [ 'vue' ],
+                extensions: ['vue'],
                 directoryAsNamespace: true, // 允許子目錄作為命名空間
                 resolvers: [] // 解析規則
             }),
@@ -130,8 +133,11 @@ export default defineConfig({
                 symbolId: '[name]', // 指定symbolId格式 預設：'icon-[dir]-[name]
 
                 inject: 'body-last', // | 'body-first' sprite插入位置
-                customDomId: '__svg__icons__dom__', // 自訂 Dom ID
+                customDomId: '__svg__icons__dom__' // 自訂 Dom ID
             }),
+            tsconfigPaths({
+                root: path.resolve(__dirname, '../', '../')
+            })
         ],
         // 共用全域 SCSS
         css: {
@@ -139,9 +145,9 @@ export default defineConfig({
             preprocessorOptions: {
                 scss: {
                     additionalData: `@import "@vitepress/theme/scss/style.scss";`,
-                    charset: false,
-                },
-            },
-        },
+                    charset: false
+                }
+            }
+        }
     }
 });
