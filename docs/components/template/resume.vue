@@ -83,7 +83,7 @@
 
             <hr class="divider" />
 
-            <OrgaSectionBlock title="Work Experience">
+            <OrgaSectionBlock title="Work Experience" subtitle="7y8m">
                 <article class="work-experience-block">
                     <MoleWorkExperience
                         v-for="work in workExperienceData"

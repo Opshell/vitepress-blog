@@ -66,7 +66,7 @@ export default [
     },
     {
         compImg: 'images/resume/iron.png',
-        company: '馬農花園',
+        company: '碼農花園',
         location: 'Tainan, Taiwan',
         jobTitle: 'Full-Stack Developer',
         period: '2017.08 - 2019.09  2y 2m',

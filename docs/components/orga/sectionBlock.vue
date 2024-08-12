@@ -1,6 +1,7 @@
 <script setup lang="ts">
     defineProps<{
         title: string
+        subtitle?: string
     }>();
 </script>
 
@@ -8,6 +9,7 @@
     <section class="section-block">
         <h2 class="title">
             {{ title }}
+            <span v-if="subtitle" class="subtitle">（{{ subtitle }}）</span>
         </h2>
 
         <slot />
@@ -22,6 +24,10 @@
             color: var(--vp-c-text-1);
             font-size: 1.75rem;
             line-height: 2rem;
+            .subtitle {
+                color: #999;
+                font-size: 1.125rem;
+            }
         }
     }
 </style>
