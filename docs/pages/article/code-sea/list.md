@@ -1,5 +1,5 @@
 ---
-layout: article-page
+layout: layoutest
 
 title: Docs with VitePress
 author: 'Opshell'

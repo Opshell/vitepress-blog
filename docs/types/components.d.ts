@@ -20,12 +20,11 @@ declare module 'vue' {
     ElSvgIcon: typeof import('./../components/el/svgIcon.vue')['default']
     LayoutArticle: typeof import('./../components/layout/article.vue')['default']
     LayoutBlog: typeof import('./../components/layout/blog.vue')['default']
-    MoleExperience: typeof import('../components/mole/workExperience.vue')['default']
+    LayoutLayoutest: typeof import('./../components/layout/layoutest.vue')['default']
     MoleSkillBox: typeof import('./../components/mole/skillBox.vue')['default']
     MoleWorkExperience: typeof import('./../components/mole/workExperience.vue')['default']
     OrgaResumeHeader: typeof import('./../components/orga/resume-header.vue')['default']
     OrgaSectionBlock: typeof import('./../components/orga/sectionBlock.vue')['default']
-    OrgaSkillBlock: typeof import('./../components/orga/skillBlock.vue')['default']
     TemplateResume: typeof import('./../components/template/resume.vue')['default']
   }
 }

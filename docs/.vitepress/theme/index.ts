@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import ArticleLayout from '../../components/layout/article.vue';
 import BlogLayout from '../../components/layout/blog.vue';
+import Layoutest from '../../components/layout/layoutest.vue';
 
 // import './scss/style.scss'
 import 'virtual:svg-icons-register';
@@ -19,7 +20,8 @@ export default {
         })
     },
     enhanceApp({ app, router, siteData }) {
-        app.component('article-page', ArticleLayout);
-        app.component('blog', BlogLayout);
+        app.component('blog', ArticleLayout);
+        app.component('layoutest', Layoutest);
+        // app.component('blog', BlogLayout);
     }
 } satisfies Theme
