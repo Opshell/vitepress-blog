@@ -1,7 +1,7 @@
 export default [
     {
         compImg: 'images/resume/ai4dt.png',
-        company: '智慧研究院',
+        company: '不正常人類研究中心',
         location: 'Tainan, Taiwan',
         jobTitle: 'Front-End Developer',
         period: '2023.09 - Now',
@@ -30,7 +30,7 @@ export default [
     },
     {
         compImg: 'images/resume/iware.png',
-        company: '不正常人類研究中心',
+        company: '馬亞動物園',
         location: 'Tainan, Taiwan',
         jobTitle: 'Front-End Developer',
         period: '2019.10 - 2023.08  3y 11m',
