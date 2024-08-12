@@ -30,7 +30,7 @@ export default [
     },
     {
         compImg: 'images/resume/iware.png',
-        company: '智慧研究院',
+        company: '不正常人類研究中心',
         location: 'Tainan, Taiwan',
         jobTitle: 'Front-End Developer',
         period: '2019.10 - 2023.08  3y 11m',
@@ -66,7 +66,7 @@ export default [
     },
     {
         compImg: 'images/resume/iron.png',
-        company: '馬亞動物園',
+        company: '馬農花園',
         location: 'Tainan, Taiwan',
         jobTitle: 'Full-Stack Developer',
         period: '2017.08 - 2019.09  2y 2m',
@@ -97,8 +97,8 @@ export default [
 ．與設計師討論UI/UX，並手刻全站特效。`
     },
     {
-        compImg: 'images/resume/ai4dt.png',
-        company: '智慧研究院',
+        compImg: 'images/resume/ezone.png',
+        company: '外星觀測所',
         location: 'Tainan, Taiwan',
         jobTitle: 'Software Engineer',
         period: '2016-08 - 2017.02  7m',
