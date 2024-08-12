@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <section class="skill-block">
+    <section class="section-block">
         <h2 class="title">
             {{ title }}
         </h2>
@@ -15,11 +15,11 @@
 </template>
 
 <style lang="scss">
-    .skill-block {
-        @include setFlex(flex-start, stretch, 1.563rem, column);
+    .section-block {
+        @include setFlex(flex-start, stretch, 2.5rem, column);
         @include setSize(100%, auto);
-        .title {
-            color: #000;
+        > .title {
+            color: var(--vp-c-text-1);
             font-size: 1.75rem;
             line-height: 2rem;
         }
