@@ -1,3 +1,18 @@
+---
+layout: article-page
+
+title: Docs with VitePress
+author: 'Opshell'
+editLink: true
+categories:
+  - vitepress-thirty-days
+tags:
+  - 鐵人賽
+  - vitepress
+date: '2024.08.12'
+
+---
+
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.

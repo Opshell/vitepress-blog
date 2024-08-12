@@ -10,6 +10,7 @@
         description: string
     }>();
 
+    // 做一個可以開關的description 區塊
     const descriptionDom = ref<HTMLElement | null>(null);
     const descriptionHeight = ref(0);
 

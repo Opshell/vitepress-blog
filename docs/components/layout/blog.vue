@@ -4,11 +4,18 @@
 
     const { Layout } = DefaultTheme;
 
-    const { frontmatter } = useData();
+    const { frontmatter, page } = useData();
+
+    console.log(frontmatter);
 </script>
 
 <template>
-    <Layout>
+    <div v-if="page.isNotFound">
+        Custom 404 page!
+    </div>
+    <Layout v-else>
+        <h1>test</h1>
+
         <template #doc-before>
             <span class="page-info">✍️{{ frontmatter.author }}</span>
             <span class="page-info">🕐{{ frontmatter.date }}</span>
@@ -17,13 +24,11 @@
                 <span v-for="item in frontmatter.tags" :key="item" class="page-info">{{ item }}</span>
             </span>
         </template>
+
+        <Content />
     </Layout>
 </template>
 
 <style lang="scss">
-    .page-info{
-        margin-right: 10px;
-        color: #7f7f7f;
-        font-size: 13px;
-    }
+
 </style>

@@ -25,6 +25,18 @@ features:
     - icon: 🤖
       title: Feature C
       details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - icon: 🤖
+      title: Feature C
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - icon: 🤖
+      title: Feature C
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - icon: 🤖
+      title: Feature C
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - icon: 🤖
+      title: Feature C
+      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
 <!-- 表情：https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json -->
