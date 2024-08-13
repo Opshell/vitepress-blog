@@ -21,34 +21,33 @@ export default {
             'right',
             'bottom',
             'left',
+            'grid-area',
+            'flex-grow',
+            'flex-shrink',
             'display',
             'flex',
             'flex-direction',
             'flex-wrap',
             'flex-flow',
             'flex-basis',
-            'flex-grow',
-            'flex-shrink',
             'order',
             'grid',
             'grid-template',
             'grid-template-areas',
-            'grid-template-rows',
             'grid-template-columns',
+            'grid-template-rows',
             'grid-row',
             'grid-row-start',
             'grid-row-end',
             'grid-column',
             'grid-column-start',
             'grid-column-end',
-            'grid-area',
             'grid-auto-rows',
             'grid-auto-columns',
             'grid-auto-flow',
             'grid-gap',
             'grid-row-gap',
             'grid-column-gap',
-            'gap',
             'row-gap',
             'column-gap',
             'align-content',
@@ -57,6 +56,7 @@ export default {
             'justify-content',
             'justify-items',
             'justify-self',
+            'gap',
             'float',
             'clear',
             // 盒模型
@@ -81,9 +81,9 @@ export default {
             'max-height',
             'padding',
             'padding-top',
+            'padding-left',
             'padding-right',
             'padding-bottom',
-            'padding-left',
             'border',
             'border-top',
             'border-right',
@@ -117,9 +117,9 @@ export default {
             'outline-offset',
             'margin',
             'margin-top',
+            'margin-left',
             'margin-right',
             'margin-bottom',
-            'margin-left',
             'box-shadow',
             'drop-shadow',
             // 文字
@@ -217,8 +217,9 @@ export default {
         'selector-attribute-quotes': 'never', // 不用給屬性選擇器的引號。
         'declaration-empty-line-before': 'never', // 在屬性之前不允許空行。
         'color-function-notation': null, // 不限制色彩函數的表示法。
-        'scss/at-mixin-argumentless-call-parentheses': 'always' // 在 mixin 調用時，要求省略空參數的括號。
-
+        'scss/at-mixin-argumentless-call-parentheses': 'always', // 在 mixin 調用時，要求省略空參數的括號。
+        'scss/at-mixin-pattern': null, // mixin 的命名模式。
+        'scss/dollar-variable-pattern': null // 變數的命名模式。
         // 'at-rule-no-unknown': [
         //     true,
         //     {

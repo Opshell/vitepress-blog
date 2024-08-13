@@ -9,11 +9,11 @@
 
 <template>
     <Layout>
-        <template v-if="frontmatter.layout.some(layout => {
-            return layout === 'blog' ||
-                   layout === 'article' ||
-                   layout === 'layoutest'
-            })" #doc-before
+        <template
+            v-if="(frontmatter.layout === 'blog'
+                || frontmatter.layout === 'doc'
+                || frontmatter.layout === 'article'
+                || frontmatter.layout === 'layoutest')" #doc-before
         >
             <span class="page-info">✍️{{ frontmatter.author }}</span>
             <span class="page-info">🕐{{ frontmatter.date }}</span>

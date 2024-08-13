@@ -1,5 +1,6 @@
 ---
-layout: layoutest
+# layout: layoutest
+layout: doc
 
 title: Docs with VitePress
 author: 'Opshell'
