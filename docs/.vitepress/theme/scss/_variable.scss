@@ -83,8 +83,10 @@
     --vp-c-default-3: var(--vp-c-gray-3);
     --vp-c-default-soft: var(--vp-c-gray-soft);
 
-    /* --vp-c-brand-1: var(--vp-c-indigo-1); */
+    //  font-color
     --vp-c-brand-1: #fec020;
+
+    // --vp-c-brand-1: var(--vp-c-indigo-1);
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-3);
     --vp-c-brand-soft: var(--vp-c-indigo-soft);
@@ -157,6 +159,13 @@
     --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
     --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
+
+// 字型設定
+:root {
+    --vp-font-family-base: 'Roboto', 'NotoSansTC', '微軟正黑體', 'Arial', sans-serif;
+    --vp-font-family-mono: 'FiraCode', 'Roboto', sans-serif;
+}
+
 
 /**
 * Component: Algolia

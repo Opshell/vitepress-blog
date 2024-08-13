@@ -1,14 +1,16 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 
-import OpshellLayout from '../theme/OpshellLayout.vue';
+import OpshellLayout from './layout/OpshellLayout.vue';
 
 import BlogLayout from '../../components/layout/blog.vue';
-import Layoutest from '../../components/layout/layoutest.vue';
 
 import 'virtual:svg-icons-register';
+
+// [-]字體引用
+import '@/public/fonts/font.css';
 
 // import './scss/style.scss'
 
@@ -22,7 +24,5 @@ export default {
     // },
     enhanceApp({ app, router, siteData }) {
         app.component('blog', BlogLayout);
-        app.component('layoutest', Layoutest);
-        // app.component('blog', BlogLayout);
     }
 } satisfies Theme

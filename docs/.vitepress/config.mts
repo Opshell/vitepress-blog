@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+
 import nav from './theme/configs/nav';
 import sidebar from './theme/configs/sidebar';
 import socialLinks from './theme/configs/socialLinks';
@@ -74,6 +75,28 @@ export default defineConfig({
             detailsLabel: '詳細'
         }
     },
+
+    // transformHead({ assets }) {
+    //     // adjust the regex accordingly to match your font
+    //     [ 'Roboto', 'NotoSansTC', 'FiraCode' ].map(fontName => {
+
+    //         const fontFile = assets.find(file => new RegExp(`${fontName}\\.\\w+\\.ttf`).test(file));
+    //         if (fontFile) {
+    //             return [
+    //                 [
+    //                     'link',
+    //                     {
+    //                         rel: 'preload',
+    //                         href: fontFile,
+    //                         as: 'font',
+    //                         type: 'font/ttf',
+    //                         crossorigin: ''
+    //                     }
+    //                 ]
+    //             ]
+    //         }
+    //     });
+    // },
 
     vite: {
         resolve: {

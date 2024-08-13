@@ -31,8 +31,14 @@ VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shi
 ```js{4}
 export default {
   data () {
-    return {
-      msg: 'Highlighted!'
+    if ('a' !== 'b') {
+      return {
+        msg: 'Highlighted!'
+      }
+    } else {
+      return {
+        msg: 'Highlighted!'
+      }
     }
   }
 }

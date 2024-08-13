@@ -23,6 +23,7 @@ declare module 'vue' {
     LayoutLayoutest: typeof import('./../components/layout/layoutest.vue')['default']
     MoleSkillBox: typeof import('./../components/mole/skillBox.vue')['default']
     MoleWorkExperience: typeof import('./../components/mole/workExperience.vue')['default']
+    OpshellLayout: typeof import('../.vitepress/theme/layout/OpshellLayout.vue')['default']
     OrgaResumeHeader: typeof import('./../components/orga/resume-header.vue')['default']
     OrgaSectionBlock: typeof import('./../components/orga/sectionBlock.vue')['default']
     TemplateResume: typeof import('./../components/template/resume.vue')['default']

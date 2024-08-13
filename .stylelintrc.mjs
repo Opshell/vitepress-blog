@@ -219,7 +219,9 @@ export default {
         'color-function-notation': null, // 不限制色彩函數的表示法。
         'scss/at-mixin-argumentless-call-parentheses': 'always', // 在 mixin 調用時，要求省略空參數的括號。
         'scss/at-mixin-pattern': null, // mixin 的命名模式。
-        'scss/dollar-variable-pattern': null // 變數的命名模式。
+        'scss/dollar-variable-pattern': null, // 變數的命名模式。
+        'scss/percent-placeholder-pattern': null, // 繼承型變數的命名模式。
+        'value-keyword-case': null // 屬性值的大小寫。
         // 'at-rule-no-unknown': [
         //     true,
         //     {
