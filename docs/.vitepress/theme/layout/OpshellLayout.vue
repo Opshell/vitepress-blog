@@ -1,10 +1,11 @@
 <script setup lang="ts">
     import DefaultTheme from 'vitepress/theme';
     import { useData } from 'vitepress';
+    import { nextTick, provide } from 'vue';
 
-    const { Layout } = DefaultTheme;
+    const { Layout } = DefaultTheme
 
-    const { frontmatter } = useData();
+    const { frontmatter, isDark } = useData();
 </script>
 
 <template>
